@@ -18,9 +18,12 @@ def remove_punc(text):
     text = re.sub('[%s]' % re.escape(string.punctuation), '', text)
     return text.strip()
 
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+
 def remove_stopwords(text):
-    stop_words = set(stopwords.words('english'))
-    return " ".join([word for word in str(text).split() if word not in stop_words])
+    # Lowercase words so comparisons match the list
+    return " ".join([word for word in text.split()
+                     if word.lower() not in ENGLISH_STOP_WORDS])
 
 def stem_words(text):
     stemmer = PorterStemmer()
