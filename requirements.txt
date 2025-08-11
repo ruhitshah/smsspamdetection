@@ -1,20 +1,8 @@
-# Use a Streamlit version that doesn't depend on imghdr
-streamlit==1.26.0
-
-# Required to load your saved LogisticRegression model
-scikit-learn>=1.0
-
-# Joblib for model persistence
-joblib==1.0.1
-
-# Natural Language Toolkit (for stopwords)
-nltk==3.6.3
-
-# Pillow provides image-handling functions and is required by Streamlit
-pillow==11.3.0
-
-# pin protobuf to avoid compatibility issues 
-protobuf==3.20.1
-
-# setuptools; pin lower than 81 to avoid deprecation warnings in Streamlit logs
-setuptools>=49.0.0,<81
+streamlit>=1.26.0          # Use a modern Streamlit release that replaced `imghdr` with Pillow:contentReference[oaicite:1]{index=1}.
+scikit-learn>=1.0          # Needed to load and run the saved LogisticRegression model.
+joblib>=1.0.1              # For model persistence.
+nltk==3.6.3                # For stopword removal and other NLP tasks.
+protobuf==3.20.1           # Safe version for Streamlit.
+setuptools>=49.0.0,<81     # Avoid pkg_resources deprecation warnings.
+# Pillow is deliberately omitted; Streamlit will install a compatible version (<10 by default).
+# If you want to pin Pillow, use: pillow>=7.1.0,<10
