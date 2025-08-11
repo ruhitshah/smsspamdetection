@@ -6,8 +6,8 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
 # Load the saved model and vectorizer
-model = joblib.load('https://github.com/ruhitshah/smsspandetectio/blob/main/sms_spam_model.pkl')
-vectorizer = joblib.load('https://github.com/ruhitshah/smsspandetectio/blob/main/tfidf_vectorizer.pkl')
+model = joblib.load('https://github.com/ruhitshah/smsspamdetection/blob/main/sms_spam_model.pkl')
+vectorizer = joblib.load('https://github.com/ruhitshah/smsspamdetection/blob/main/tfidf_vectorizer.pkl')
 
 # Function to preprocess the input text (similar to what was done for training data)
 def remove_punc(text):
